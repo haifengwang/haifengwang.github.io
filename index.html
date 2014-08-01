@@ -8,7 +8,6 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
@@ -34,7 +33,7 @@
         <section id="main-content">
 
         {% for post in site.posts %}
-　　　　　　<p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> {{ post.date | date_to_string }} </p>
+　　　　　　<p><a href="{{ site.baseurl }}{{ post.url }}"><h3>{{ post.title }}</h3></a> {{ post.date | date_to_string }} </p>
 　　　　{% endfor %}
 
 <h3>

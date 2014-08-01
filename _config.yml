@@ -1,0 +1,12 @@
+auto: true
+
+markdown: rdiscount
+pygments: true
+paginate: 8
+permalink: /:title
+baseurl:/blog
+
+title: 地平线_博客
+url: http://haifengwang.github.io/
+feed: /atom.xml
+author_info: <a href="http://haifengwang.github.io/">地平线</a>
