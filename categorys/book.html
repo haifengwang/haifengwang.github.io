@@ -2,8 +2,8 @@
 layout: default
 title: book_分类_
 name: book
----
-<!-- {% include category.html  %} -->
+--- 
+
 <div class="news">
 	<h3>book ({{ site.categories[book] | size }})</h3>
 	<!-- ({{ site.categories[page.name] | size }}) -->
@@ -13,3 +13,13 @@ name: book
 		{% endfor %}
 	</ul>
 </div>
+<!-- 测试 -->
+{% for cat in site.categories %}
+            
+                <li>
+                <a href="{{ site.baseurl }}/categories/{{ cat[0] }}"> {{ cat[0] }} ({{ cat | last | size}}) </a>
+                </li>
+            
+      {% endfor %}
+
+<!-- {% include category.html  %} -->
