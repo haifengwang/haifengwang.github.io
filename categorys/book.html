@@ -19,7 +19,8 @@ name: book
                 <li>
                 <a href="{{ site.baseurl }}/categories/{{ cat[0] }}"> {{ cat[0] }} ({{ cat | last | size}}) </a>
                 </li>
+                {% for post in cat[0] %}
+		<li><span>[{{ post.date | date:"%Y-%m-%d"  }}]</span><a href="{{ site:url  }}{{ post.url  }}" target="_blank">{{post.title}}</a> </li>
+		{% endfor %}
             
       {% endfor %}
-
-<!-- {% include category.html  %} -->
