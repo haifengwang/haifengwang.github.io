@@ -1,5 +1,5 @@
 <div class="news">
-	<h3>{{ page.title }}</h3>
+	<h3>{{ page.name }} ({{ site.categories[page.name] | size }})</h3>
 	<!-- ({{ site.categories[page.name] | size }}) -->
 	<ul class="index_ul">
 		{% for post in site.categories[page.name] %}
