@@ -1,4 +1,5 @@
 baseurl: /blog
 url: http://haifengwang.github.io/blog
-
+markdown: redcarpet
+safe: false
 paginate: 10
