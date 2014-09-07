@@ -7,7 +7,7 @@ keywords: 开发,ios,error
 ---  
 
 
-**第一种:缓存文件问题**
+**第一:缓存文件问题**
 
 “Could not launch 'app name'”，No such file or directory (/Users/appleapple/Library/Developer/Xcode/DerivedData/FCHK-bdgaoltxzddyrogqdfuhtasreoxs/Build/Products/Debug-iphoneos/FCHK.app)
 
