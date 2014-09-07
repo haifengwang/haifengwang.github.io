@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 最近ios开发中遇到的几个问题总结
-category: book
+category: ios
 description: 在ios开发中，最近由于开发环境，已经程序环境配置发生一些错误。这些错误会直接导致程序无法运行，但并不是程序错误，总结如下。
 keywords: 开发,ios,error
 ---  
