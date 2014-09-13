@@ -1,7 +1,7 @@
 ---
-layout: post
-title: 猴子吃桃问题，数学和计算机的十字路口
-category: thinking
+layout:post
+title:猴子吃桃问题，数学和计算机的十字路口
+category:thinking
 description:猴子吃桃问题，在算法上“递推思想”，而转化在数学上就是“数列”。而这个问题用程序实现，相对容易，但是注定了它的复杂度为O(N)，用数学实现需要推导，但一阵见血。 
 keywords: 算法,数列,递推思想,猴子吃桃
 --- 
