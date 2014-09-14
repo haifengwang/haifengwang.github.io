@@ -71,3 +71,9 @@ h2.first_title a:hover{color:#009900;}
 .directory ul a{color:#EE7621;text-decoration: none;}
 .directory ul a:hover{color:#EE7621;text-decoration: underline;}
 .linkorg{color:#ee7621;}
+pre code {margin: 0;padding: 0;white-space: pre;border: none;background: transparent; }
+.highlight pre {background-color: #f8f8f8;border: 1px solid #cccccc;font-size: 13px;line-height: 19px;
+  overflow: auto;padding: 6px 10px;border-radius: 3px; }
+pre {background-color: #f8f8f8;border: 1px solid #cccccc;font-size: 13px;line-height: 19px;overflow: auto;padding: 6px 10px;
+border-radius: 3px; }
+pre code, pre tt {background-color: transparent;border: none; }
