@@ -25,6 +25,7 @@ Get-ChildItem $path -Recurse -Force -Include .svn | remove-item -Force -Recurse
 一些常用的**Power Shell** 命令。
 
 + 入门级别
+
 1. 在文件里递回地搜索某个字符串 `dir –r | select string "searchforthis" `
 
 2. 使用内存找到五个进程 `ps | sort –p ws | select –last 5`
@@ -37,7 +38,11 @@ Get-ChildItem $path -Recurse -Force -Include .svn | remove-item -Force -Recurse
 
 7. 在目录里移除所有文件而不需要单个移除 `Remove-Item C:/tobedeleted –Recurse`
 
-8. 重启当前计算机——`Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown`
+8. 重启当前计算机 
+
+```
+Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown
+```
 
 + 收集信息
 
@@ -45,34 +50,91 @@ Get-ChildItem $path -Recurse -Force -Include .svn | remove-item -Force -Recurse
 
 10. 获取当前计算机的BIOS信息 `Get-WmiObject -Class Win32_BIOS -ComputerName`
 
-11. 列出所安装的修复程序（如QFE或Windows Update文件） `Get-WmiObject -Class Win32_QuickFixEngineering -ComputerName`
+11. 列出所安装的修复程序（如QFE或Windows Update文件）
 
-12. 获取当前登录计算机的用户的用户名 `Get-WmiObject -Class Win32_ComputerSystem -Property UserName -ComputerName`
+ ```Get-WmiObject -Class Win32_QuickFixEngineering -ComputerName```
 
-13. 获取当前计算机所安装的应用的名字 `Get-WmiObject -Class Win32_Prod t -ComputerName . | Format-Wide -Column 1`
+12. 获取当前登录计算机的用户的用户名 
 
-14. 获取分配给当前计算机的IP地址 `Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=true -ComputerName . | Format-Table -Property IPAddress`
+```
+Get-WmiObject -Class Win32_ComputerSystem -Property UserName -ComputerName
+```
 
-15. 获取当前机器详细的IP配置报道 `Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=true -ComputerName . | Select-Object -Property [a-z]* -Excl?Property IPX*,WINS*`
+13. 获取当前计算机所安装的应用的名字 
 
-16. 找到当前计算机上使用DHCP启用的网络卡 `Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=true " -ComputerName`
+```
+Get-WmiObject -Class Win32_Prod t -ComputerName . | Format-Wide -Column 1
+```
 
-17. 在当前计算机上的所有网络适配器上启用 `DHCP——Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=true -ComputerName . | ForEach-Object -Process {$_.EnableDHCP()}`
+14. 获取分配给当前计算机的IP地址 
+
+```
+Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=true -ComputerName . | Format-Table -Property IPAddress
+```
+
+15. 获取当前机器详细的IP配置报道 
+
+```
+Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=true -ComputerName . | Select-Object -Property [a-z]* -Excl?Property IPX*,WINS*
+```
+
+16. 找到当前计算机上使用DHCP启用的网络卡 
+
+```
+Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=true " -ComputerName
+```
+
+17. 在当前计算机上的所有网络适配器上启用 
+
+```
+DHCP——Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=true -ComputerName . | ForEach-Object -Process {$_.EnableDHCP()}
+```
 
 + 软件管理
 
-18. 在远程计算机上安装MSI包 `Get-WMIObject -ComputerName TARGETMACHINE -List | Where-Object -FilterScript {$_.Name -eq "Win32_Prod t"}).Install(//MACHINEWHEREMSIRESIDES/path/package.msi`
+18. 在远程计算机上安装MSI包 
 
-19. 使用基于MSI的应用升级包升级所安装的应用 `Get-WmiObject -Class Win32_Prod t -ComputerName . -Filter "Name='name_of_app_to_be_upgraded'").Upgrade(//MACHINEWHEREMSIRESIDES/path/upgrade_package.msi`
+```
+Get-WMIObject -ComputerName TARGETMACHINE -List | Where-Object -FilterScript {$_.Name -eq "Win32_Prod t"}).Install(//MACHINEWHEREMSIRESIDES/path/package.msi
 
-20. 从当前计算机移除MSI包 `Get-WmiObject -Class Win32_Prod t -Filter "Name='prod t_to_remove'" -ComputerName . ).Uninstall()`
+```
+
+19. 使用基于MSI的应用升级包升级所安装的应用 
+
+```
+Get-WmiObject -Class Win32_Prod t -ComputerName . -Filter "Name='name_of_app_to_be_upgraded'").Upgrade(//MACHINEWHEREMSIRESIDES/path/upgrade_package.msi
+
+```
+
+20. 从当前计算机移除MSI包 
+
+```
+Get-WmiObject -Class Win32_Prod t -Filter "Name='prod t_to_remove'" -ComputerName . ).Uninstall()
+
+```
 
 + 机器管理
 
-21. 一分钟后远程关闭另一台机器 `Start-Sleep 60; Restart-Computer –Force –ComputerName TARGETMACHINE`
+21. 一分钟后远程关闭另一台机器 
 
-22. 添加打印机 `New-Object -ComObject WScript.Network).AddWindowsPrinterConnection(//printerserver/hplaser3`
+```
+Start-Sleep 60; Restart-Computer –Force –ComputerName TARGETMACHINE
+```
 
-23. 移除打印机 `New-Object -ComObject WScript.Network).RemovePrinterConnection("//printerserver/hplaser3 ")`
+22. 添加打印机 
 
-24. 进入PowerShell会话 `nvoke-command -computername machine1, machine2 -filepath c:/Script/script.ps1`
+```
+New-Object -ComObject WScript.Network).AddWindowsPrinterConnection(//printerserver/hplaser3
+```
+
+23. 移除打印机 
+
+```
+New-Object -ComObject WScript.Network).RemovePrinterConnection("//printerserver/hplaser3 ")
+```
+
+24. 进入PowerShell会话 
+
+```
+invoke-command -computername machine1, machine2 -filepath c:/Script/script.ps1
+```
