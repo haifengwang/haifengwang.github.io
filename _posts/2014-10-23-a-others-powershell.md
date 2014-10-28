@@ -2,7 +2,7 @@
 layout: post
 title: PowerShell 让开发更高效
 category: others
-description: 《卓有成效的程序员》提到如何在开发软件的过程中变得更加高效。高效的方式有好多种，比如说用好的工具，好的习惯等。用户 **shell** 也一定会开发变的更加高效。
+description: 《卓有成效的程序员》中提到如何在开发软件的过程中变得更加高效。高效的方式有好多种，比如说用好的工具，好的管理方式，好的习惯等。善用shell脚本就是其中之一。
 keywords: 开发,powersehll,效率,常用
 --- 
 
@@ -11,7 +11,7 @@ keywords: 开发,powersehll,效率,常用
 我尝试着用`PowerShell` 写了一段脚本。效果很不错，因为 **PowerShell** 支持强制删除。
 代码：
 
-```
+```shell
 //删除文件
 $path = "D:\Test"
 Get-ChildItem $path -Recurse -Force -Include .svn | remove-item -Force -Recurse 
@@ -19,7 +19,7 @@ Get-ChildItem $path -Recurse -Force -Include .svn | remove-item -Force -Recurse
 
 像 PowerShell 这种脚本，如果熟练了，在工作中会很方便的。曾听过这样一则故事，老板让一个程序员监控系统运行的情况。一个C语言程序员想着先做一个类似的监控系统，另一个用了一句 `shell` 代码就搞定了。
 
-《卓有成效的程序员》提到如何在开发软件的过程中变得更加高效。高效的方式有好多种，比如说用好的工具，好的习惯等。用户 **shell** 也一定会开发变的更加高效。
+《卓有成效的程序员》提到如何在开发软件的过程中变得更加高效。高效的方式有好多种，比如说用好的工具，好的习惯等。用 **shell** 也一定会开发变的更加高效。
 
 
 一些常用的**Power Shell** 命令。

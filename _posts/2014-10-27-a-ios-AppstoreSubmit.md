@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 提交 App 到 Appstore遇到的问题
+title: 提交 App 到 App Store遇到的问题
 category: ios
 description: 今天是 Xcode 更新后，以及苹果 ios8 以后提交第一个应用。其中遇到了不少问题。第一个证书问题没法提交。第二个就是各种图片问题。
 keywords: 开发,ios,问题,P12,AppStore
