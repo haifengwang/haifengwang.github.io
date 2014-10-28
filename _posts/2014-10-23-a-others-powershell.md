@@ -11,7 +11,7 @@ keywords: 开发,powersehll,效率,常用
 我尝试着用`PowerShell` 写了一段脚本。效果很不错，因为 **PowerShell** 支持强制删除。
 代码：
 
-```shell
+```
 //删除文件
 $path = "D:\Test"
 Get-ChildItem $path -Recurse -Force -Include .svn | remove-item -Force -Recurse 
