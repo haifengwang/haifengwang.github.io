@@ -44,7 +44,7 @@ $("input").click(function(event) {
 		var currentState = history.state;
 		console.log(currentState);
 	});
-$(window).bind("popstate", function() {
+$(window).bind("popstate", function(e) {
     alert("location: " + document.location + ", state: " + JSON.stringify(e.state));
   });
 
