@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS3 Multiple Columns & Column Breaks
-category: html5
+category: HTML5
 description: 用 CSS3 可以像报纸一样对文本多列排版,通过 Multiple Columns 和 Column Breaks 保证了完美显示
 keywords:  CSS3,column-count,column-break-inside
 --- 
@@ -30,7 +30,7 @@ keywords:  CSS3,column-count,column-break-inside
 
 其中`column-rule`包含一些其他相关属性，具体查看[**CSS3 column-rule Property**](http://www.w3schools.com/cssref/css3_pr_column-rule.asp) 
 
-用以上的方式可以实现分栏显示，但会遇到整段内容被笨拙的分割跨列。如[示例](/code/column1.html)第4段的情况，本来完整的内容本被强制的拆分到另一栏。
+用以上的方式可以实现分栏显示，但会遇到整段内容被笨拙的分割跨列。如[示例](/blog/code/column1.html)第4段的情况，本来完整的内容本被强制的拆分到另一栏。
 
 当然了 **W3C**组织也不会让这种事情发生，因而出现了`column-break` 参考地址[ CSS column break properties](http://www.w3.org/TR/css3-multicol/#column-breaks)
 
