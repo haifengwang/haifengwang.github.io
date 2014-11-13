@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Column Breaks</title>
+	<style type="text/css">
+    ol li{
+	    margin:0 0 2em 2em;
+	    list-style-type: decimal;
+	    float:left;
+		}	
+/*ol li{
+    -webkit-column-break-inside:avoid;
+    -moz-column-break-inside:avoid;
+    -o-column-break-inside:avoid;
+    -ms-column-break-inside:avoid;
+    column-break-inside:avoid;
+}*/
+ol{
+    -webkit-column-count: 2; -webkit-column-gap:2em;
+    -moz-column-count:2; -moz-column-gap:2em;
+    -o-column-count:2; -o-column-gap:2em;
+    column-count:2; column-gap:2em;
+}
+
+
+	</style>
+</head>
+<body>
+	<ol>
+		<li>
+			<p>客路青山外 行舟绿水前 潮平两岸阔 风正一帆悬</p>
+			<p>海日生残夜 江春入旧年 乡书何处达 归雁洛阳边</p>
+		</li>
+		<li>
+			<p>何年顾虎头 满壁画沧州 赤日石林气 青天江海流</p>
+			<p>锡飞常近鹤 杯渡不惊鸥 似得庐山路 真随惠远游</p>
+			<p>&lt;&lt;题玄武禅师屋壁&gt;&gt; 杜 甫</p>
+		</li>
+		<li>
+			<p>高阁逼诸天 登临近日边 晴开万井树 愁看五陵烟</p>
+			<P>槛外低秦岭 窗中小渭川 早知清净理 常愿奉金仙</p>
+			<p>&lt;&lt;登总持阁 &gt;&gt; 岑 参</p>
+		</li>
+		<li>
+			<p>小苑莺歌歇 长门蝶舞多 眼看春又去 翠辇不曾过</p>
+			<p>&lt;&lt;思君恩&gt;&gt; 令狐楚</p>
+		</li>
+		<li>
+			<p>春眠不觉晓 ，处处闻啼鸟。 夜来风雨声 ，花落知多少。</p>
+			<p>--春晓　孟浩然</p>
+		</li>
+		<li>
+			<p>别业居幽处 到来生隐心 南山当户牖 澧水映园林</p>
+			<p>竹覆经冬雪 庭昏未夕阴 寥寥人境外 闲坐听春禽</p>
+			<br>&lt;&lt;苏氏别业&gt;&gt; 祖 咏</li>
+		<li>
+			<p>青山横北郭 白水绕东城 此地一为别 孤篷万里征</p>
+			<p>浮云游子意 落日故人情 挥手自兹去 萧萧斑马鸣</p>
+		</li>
+
+	</ol>
+</body>
+</html>
