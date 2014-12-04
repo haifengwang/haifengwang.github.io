@@ -2,7 +2,7 @@
 layout: post
 title: 我常用的一些软件——Windows 篇
 category: others
-description: 我是一个工具爱好者，比较喜欢折腾用各种软件。工欲善其事，必先利其器。好多工具不仅带给你使用的快感，往往使你事倍功半。
+description: 我是一个工具爱好者，比较喜欢折腾用各种软件。工欲善其事，必先利其器。好工具不仅带给你使用的快感，往往使你事倍功半。
 keywords: 软件,常用,效率,windows
 --- 
 
