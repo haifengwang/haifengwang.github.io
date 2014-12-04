@@ -1,10 +1,10 @@
 ---
-layout: post
-title: 利用 UIWebView 对页面分页显示
-category: ios
+layout: post 
+title: 利用 UIWebView 对页面分页显示 
+category: ios 
 description: UIWebView 在 ios7.0 增加了属性 paginationMode，结合 pagingEnabled
  可以方便的对Web页面分页显示。
-keywords: 开发,ios,UIWebView,webView
+keywords: 开发,ios,UIWebView,webView 
 --- 
 
 **UIWebView** 在 ios7.0 增加了属性 `paginationMode`，结合 `pagingEnabled`
