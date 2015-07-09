@@ -1,10 +1,4 @@
 
-@media screen and (max-width: 1200px) {
-h1 { color: green }
-.wrap{width:980px;margin:0 auto;}
-.content{width:698px;margin-right:10px;display:inline;padding:10px;}
-.sidebar{width:250px;}
-}
 .wrap{width:100%;margin:0 auto;overflow: hidden; background: #000;}
 .content{width:100%;margin-right:10px;display:inline;padding:10px;}
 .sidebar{display:none;}.wrap{width:100%;margin:0 auto;overflow: hidden; background: #000;}
