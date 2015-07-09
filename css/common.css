@@ -1,5 +1,5 @@
 @media all and (min-width: 70em) {
-    .wrap{width:980px;margin:0 auto;}
+    .wrap{max-width:980px;margin:0 auto;}
     .sidebar{width:250px;display:block;}
     .content{width:698px;margin-right:10px;display:inline;padding:10px;}
 }
