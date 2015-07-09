@@ -2,7 +2,7 @@
 layout: post
 title: ios App集成支付宝遇到一些问题
 category: ios
-description: 项目中用到了支付宝，集成时间出现了不少问题。其中有对机制理解不够的问题，也有支付宝有些搞不清楚的逻辑问题。
+description: 项目中用到了支付宝，集成时出现了不少问题。其中有对机制理解不够的问题，也有支付宝本身有些搞不清楚的逻辑。
 keywords: ios,支付宝,集成
 --- 
 
