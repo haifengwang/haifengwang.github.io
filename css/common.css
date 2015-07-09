@@ -1,5 +1,5 @@
 
-.wrap{width:100%;margin:0 auto;overflow: hidden; background: #000;}
+.wrap{width:100%;margin:0 auto;overflow: hidden;}
 .content{width:100%;margin-right:10px;display:inline;padding:10px;}
 .sidebar{display:none;}.wrap{width:100%;margin:0 auto;overflow: hidden; background: #000;}
 .content{width:100%;margin-right:10px;display:inline;padding:10px;}
@@ -114,4 +114,9 @@ table tr { border-top: 1px solid #cccccc;background-color: white;margin: 0;paddi
     table tr th :last-child, table tr td :last-child {
       margin-bottom: 0; }
  
-
+@media screen and (orientation: portrait) and (min-width:
+800px) {
+.wrap{width:980px;margin:0 auto;overflow: hidden;}
+.content{width:698px;margin-right:10px;display:inline;padding:10px;}
+.sidebar{width:230px;}
+}
