@@ -96,7 +96,7 @@ hr {
   height: 4px;
   padding: 0;
 }
-blockquote {border-left: 4px solid #dddddd;padding: 0 15px; color: #777777; }
+blockquote {border-left: 4px solid #dddddd;padding: 0 15px; color: #777777; overflow: hidden; }
 blockquote > :first-child {margin-top: 0; }
 blockquote > :last-child {margin-bottom: 0; }
 
