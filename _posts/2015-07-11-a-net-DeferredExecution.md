@@ -8,15 +8,13 @@ keywords: C#,dotNet,延迟执行,Deferred Execution
 --- 
 
 
-在 `.NET` 程序中好多地方都有延迟(`Lazy`)的痕迹,这一点在 `Linq` 中发扬广大。在 `.NET4.0` 中又引入了 `System.Lazy<T>` 。更加丰富了延迟的方式。
+在 `.NET` 程序中好多地方都有延迟 `Lazy` 的痕迹,这一点在 `Linq` 中发扬广大。 `.NET4.0` 中又引入了 `System.Lazy<T>` 更加丰富了延迟的方式。
 
-延迟主要有：延迟实例化，延迟初始化，延迟执行等。主要表达的思想是，把对象将会延迟到使用时创建，而不是在对象实例化时创建对象，即用时才加载。
-
-这种方式有助于提高于应用程序的性能，避免浪费计算，节省内存的使用等。
+延迟主要有：延迟实例化，延迟初始化，延迟执行等。主要表达的思想是，把对象将会延迟到使用时创建，而不是在对象实例化时创建对象，即用时才加载。这种方式有助于提高于应用程序的性能，避免浪费计算，节省内存的使用等。
 
 ## Linq中延迟
 
-`Linq`中的查询，都是延迟执行。
+`Linq`中的查询，几乎都是延迟执行。
 
 ```
 var ls=ArticleServices.GetAllArtices().Where(x => x.Id == id);
@@ -101,7 +99,7 @@ internal static IEnumerable<T> Where<T>(this IEnumerable<T> enumerable, Func<T, 
 
 `yield` 关键字形成 `iterator block` ，便有了延迟执行的效果。大部分的 `LINQ to Objects API` ，也就是 `Enumerable static class` 上，几乎都是 `IEnumerable<TSource>` 基础上的扩展。
 
-**yield**在 `.NET` 中被发扬光大，利用它可以做很多很酷的事情。 **<<C# in Depth>>** 中对 `yield`从原理到应用做了很深的探讨，可以[查看这里](http://csharpindepth.com/articles/chapter6/iteratorblockimplementation.aspx)。
+**yield**在 `.NET` 中广泛使用，利用它可以做很多很酷的事情。 **C# in Depth** 中对 `yield`从原理到应用做了很深的探究，可以[查看这里](http://csharpindepth.com/articles/chapter6/iteratorblockimplementation.aspx)。
 
 利用 `yield` 实现一个延迟示例。示例中包含 `User`类，`Article`类和 `ArticleServices`服务类，[具体代码](https://github.com/haifengwang/LazyExplore)。
 
@@ -196,4 +194,4 @@ public static List<Article> GetArtices()
 ```
 ##总结
 
-`Deferred Execution`在多核时代，成为了各个高级语言的重要特性。应用场景还是蛮多的。比如说创建一个对象，需要包含子对象，但子对象的并不需要及时初始化；比如说一个大对象中有多个子对象，比如说要优化程序的启动速度等。最常见的示例恐怕是各种 `ORM` 框架了。记着以后自己写访问类，记得一定要支持 `Deferred Execution`。
+`Deferred Execution`在多核时代，成为了各个高级语言一个很重要特性。应用场景还是蛮多的。比如说创建一个对象，需要包含子对象，但子对象的并不需要及时初始化；比如说一个大对象中有多个子对象，比如说要优化程序的启动速度等。最常见的示例恐怕是各种 `ORM` 框架了。记着以后自己写访问类，记得一定要支持 `Deferred Execution`。
