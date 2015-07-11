@@ -1,0 +1,16 @@
+---
+layout: default
+category: net
+title: net_分类_
+name: net 
+---
+<div class="news">
+	<h3>.NET ({{ site.categories[page.category] | size }})</h3>
+	<!-- ({{ site.categories[page.name] | size }}) -->
+	<ul class="index_ul">
+		{% for post in site.categories[page.category] %}
+		<li><span>[{{ post.date | date:"%Y-%m-%d"  }}]</span><a href="{{ site:url  }}{{ post.url  }}" target="_blank">{{post.title}}</a> </li>
+		{% endfor %}
+	</ul>
+</div>
+<!-- 测试 -->
