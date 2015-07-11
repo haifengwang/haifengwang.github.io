@@ -2,10 +2,12 @@
     .wrap{max-width:980px;margin:0 auto;}
     .sidebar{max-width:250px;display:block;}
     .content{max-width:698px;margin-right:10px;display:inline;padding:10px;}
+    .postbox{max-width:940px;padding:10px 20px;}
 }
 .wrap{width:100%;margin:0 auto;}
-.sidebar{width:250px; display: block;}
+.sidebar{width:100%; display: block;}
 .content{width:100%;margin-right:10px;display:inline;padding:10px;}
+.postbox{width:100%;padding:10px 20px;}
 body{background-color:#ededed;padding:0px;margin:0px;font-family:"Monaco","Hiragino Sans GB","Microsoft YaHei",Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;word-spacing:1px;}
 img{border:0px;}
 .left{float:left;}
@@ -56,7 +58,7 @@ h2.first_title a:hover{color:#009900;}
 .links ul li{height:28px;line-height:28px;border-bottom:1px dotted #ededed;float:left;margin-right:10px;}
 .links ul li a{color:#444;text-decoration: none;}
 .links ul li a:hover{color:#009900;}
-.postbox{width:940px;padding:10px 20px;}
+
 .post_links{background-color:#ededed;padding:5px;}
 .post_links h3{height:30px;line-height:30px;border-bottom:1px solid #fff;}
 .post_links ul{}
