@@ -7,7 +7,7 @@ keywords:  HTML5,WebSocket,推送
 --- 
 
 ## 前言
-最近学习 `SignalR` ，小总结 
+最近学习 `SignalR` ，做了小总结 
 [《通过  实现耗时任务实时通知》](http://haifengwang.github.io/blog/net/2015/07/15/a-net-SignalR_Real-time-Notifications.html) 。`SignalR` 本身融合利用了 Web 通信的好几种方式，其中之一用到了 **WebSocket** 。
 
 ## 简述
@@ -23,8 +23,8 @@ var Socket = new WebSocket(url, [protocal] );
 
 ###`WebSocket` 包含以下属性
 
-+ Socket.readyState 只读属性，包含（0~3）四中状态。
-+ Socket.bufferedAmount 只读属性，用来标识通过 `send()` 已经发送过的字节数。
++ `Socket.readyState` 只读属性，包含（0~3）四中状态。
++ `Socket.bufferedAmount` 只读属性，用来标识通过 `send()` 已经发送过的字节数。
 
 ###WebSocket Events
 
