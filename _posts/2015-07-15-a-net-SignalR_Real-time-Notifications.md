@@ -12,7 +12,7 @@ keywords: ASP.NET,SignalR,realtime
 
 **ASP.NET SignalR** 是一个为 ASP.NET 开发者提供简化  `real-time web` 应用的库。简化并优化以往 `Web` 程序耗资源 `javascript轮询`，以及 `Comet Programming` 方案，同时为 Web程序 添加了即时能力（realtime）。
 
-`ASP.NET SignalR` 出现后就受到广泛的关注。目前已经到升级到2.0,需要 `.NET Framework 4.5.`支持。
+`ASP.NET SignalR` 出现后就受到广泛的关注。目前已经到升级到2.0,需要 `.NET Framework 4.5`支持。
 
 
 ##目标

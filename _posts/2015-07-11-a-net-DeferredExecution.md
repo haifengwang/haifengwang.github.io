@@ -8,7 +8,7 @@ keywords: C#,dotNet,延迟执行,Deferred Execution
 --- 
 
 
-在 `.NET` 程序中好多地方都有延迟 `Lazy` 的痕迹,这一点在 `Linq` 中发扬广大。 `.NET4.0` 中又引入了 `System.Lazy<T>` 更加丰富了延迟的方式。
+在`.NET` 程序中好多地方都有延迟 `Lazy` 的痕迹,这一点在 `Linq` 中发扬广大。 `.NET4.0` 中又引入了 `System.Lazy<T>` 更加丰富了延迟的方式。
 
 延迟主要有：延迟实例化，延迟初始化，延迟执行等。主要表达的思想是，把对象将会延迟到使用时创建，而不是在对象实例化时创建对象，即用时才加载。这种方式有助于提高于应用程序的性能，避免浪费计算，节省内存的使用等。
 
@@ -180,17 +180,17 @@ public class User_lazy
 
 ```
 public static List<Article> GetArtices()
-        {
-            List<Article> articles = new List<Article>
+    {
+        List<Article> articles = new List<Article>
             {
                 new Article{Id=1,Title="Lazy Load",PublishDate=DateTime.Parse("2015-4-20")},
                 new Article{Id=2,Title="Delegate",PublishDate=DateTime.Parse("2015-4-21")},
                 new Article{Id=3,Title="Event",PublishDate=DateTime.Parse("2015-4-22")},
                 new Article{Id=4,Title="Thread",PublishDate=DateTime.Parse("2015-4-23")}
             };
-            Console.WriteLine("Article Initalizer");
-            return articles;
-        }
+        Console.WriteLine("Article Initalizer");
+        return articles;
+    }
 ```
 ##总结
 
