@@ -12,7 +12,7 @@ keywords: C#,dotNet,延迟执行,Deferred Execution
 
 延迟主要有：延迟实例化，延迟初始化，延迟执行等。主要表达的思想是，把对象将会延迟到使用时创建，而不是在对象实例化时创建对象，即用时才加载。这种方式有助于提高于应用程序的性能，避免浪费计算，节省内存的使用等。
 
-## Linq中延迟
+## Linq中的延迟
 
 `Linq`中的查询，几乎都是延迟执行。
 
@@ -176,7 +176,7 @@ public class User_lazy
     }
 ```
 
-`GetArtices`的实现，将是一个自然顺序的实现。
+`GetArtices()`将是一个自然顺序的实现。
 
 ```
 public static List<Article> GetArtices()
