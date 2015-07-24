@@ -10,7 +10,7 @@ keywords: ASP.NET,Web API,Cookie,Session
 ##背景
 最近接到一个需求:需要在 `ASP.NET Web API` 中对一个外部 `API` 做一次调用。而外部 `API` 又是以 `Cookie` 作为验证。问题来了,在 ASP.NET Web API 中当然是不能记录 `Cookie` ，但 `Cookie` 还得记下该怎么办？
 
-解决办法:通过第三方存储,如文件、缓存、数据库等。我选择较为方便的 `Session`.
+解决办法:通过第三方存储:如文件、缓存、数据库等。我选择较为方便的 `Session`.
 
 ##实现
 
@@ -87,18 +87,21 @@ string yCookie = string.Empty;
             };
 ```
 + 请求
+
 ```
  HttpClient client = new HttpClient(handler);
+
 client.BaseAddress = "http://api.com/";
 HttpResponseMessage response =
-                    client.GetAsync("api/getInfo").Result
+                    client.GetAsync("api/getInfo").Result;
 ```
+
 这样就基本完成了这个需求。
 
 ## 知识点
 + **HttpClinet** 
 
-`HttpClinet` 是 `.NET 4.5` 引入在 `System.Net.Http.HttpClient` ,作为 Http 请求和响应的基类。
+`HttpClinet` 是 `.NET 4.5` 引入在 `System.Net.Http.HttpClient` 下 ,作为 Http 请求和响应的基类。
 
 看到 `HttpClinet` 也许你会想到它一个兄弟 `WebClient`。`WebCliebt` 在 `.NET 2.0` 中引入，提供向 URI 标识的资源发送数据和从 URI 标识的资源接收数据的公共方法。
 
