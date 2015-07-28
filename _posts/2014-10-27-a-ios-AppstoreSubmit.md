@@ -10,7 +10,7 @@ keywords: 开发,ios,问题,P12,AppStore
 
 ## P12 文件 
 
-注册正式成为 apple 开发者（花费￥99/年），得到Certification 证书（.cer文件）。 证书是对电脑开发资格的认证，每个开发者帐号有一套，分为两种： 
+注册正式成为 apple 开发者（花费$99/年），得到Certification 证书（.cer文件）。 证书是对电脑开发资格的认证，每个开发者帐号有一套，分为两种： 
 
 -  **Developer Certification**(开发证书) 安装在电脑上提供权限：开发人员通过设备进行真机测试。可以生成副本供多台电脑安装（只需要在该账户的开发中心Certificates, Identifiers & Profiles下载就行）；
 - **Distribution Certification**(发布证书) 安装在电脑上提供发布iOS程序的权限：开发人员可以制做测试版和发布版的程序。
