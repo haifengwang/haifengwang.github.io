@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 服务器端消息推送之 Server-Sent Events 篇
-category: HTML5
+category: html5
 description: HTML5 推出 Server-Sent Events 允许客户端从服务器端获取更新。文本结合实例对如何创建、数据传递、自定义事件方面做探讨。
 keywords:  HTML5,SSE,推送
 --- 
