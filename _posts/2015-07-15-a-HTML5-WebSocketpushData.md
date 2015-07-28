@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 用 WebSocket 实现服务端推送
-category: HTML5
+category: html5
 description: WebSocket 是 HTML5 一个重要特性，提供单 TCP 连接上进行全双工通讯的协议。本文用 WebSocket 实现一个简单推送。
 keywords:  HTML5,WebSocket,推送
 --- 
