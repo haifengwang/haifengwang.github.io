@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>2015-07-28-a-HTML5-SSE_To_Web.md—/Users/wanghaifeng/Documents/project/blog/_posts</title>
+    <style type="text/css">
+    html{font-family: sans-serif;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%}body{margin: 0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display: block}audio,canvas,progress,video{display: inline-block;vertical-align: baseline}audio:not([controls]){display: none;height: 0}[hidden],template{display: none}a{background: transparent}a:active,a:hover{outline: 0}abbr[title]{border-bottom: 1px dotted}b,strong{font-weight: bold}dfn{font-style: italic}h1{font-size: 2em;margin: 0.67em 0}mark{background: #ff0;color: #000}small{font-size: 80%}sub,sup{font-size: 75%;line-height: 0;position: relative;vertical-align: baseline}sup{top: -0.5em}sub{bottom: -0.25em}img{border: 0}svg:not(:root){overflow: hidden}figure{margin: 1em 40px}hr{box-sizing: content-box;height: 0}pre{overflow: auto}code,kbd,pre,samp{font-family: monospace, monospace;font-size: 1em}button,input,optgroup,select,textarea{color: inherit;font: inherit;margin: 0}button{overflow: visible}button,select{text-transform: none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance: button;cursor: pointer}button[disabled],html input[disabled]{cursor: default}button::-moz-focus-inner,input::-moz-focus-inner{border: 0;padding: 0}input{line-height: normal}input[type="checkbox"],input[type="radio"]{box-sizing: border-box;padding: 0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height: auto}input[type="search"]{-webkit-appearance: textfield;box-sizing: content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance: none}fieldset{border: 1px solid #c0c0c0;margin: 0 2px;padding: 0.35em 0.625em 0.75em}legend{border: 0;padding: 0}textarea{overflow: auto}optgroup{font-weight: bold}table{border-collapse: collapse;border-spacing: 0}td,th{padding: 0}*{box-sizing: border-box}input,select,textarea,button{font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"}body{min-width: 1020px;font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";color: #333;background-color: #fff}a{color: #4183c4;text-decoration: none}a:hover,a:active{text-decoration: underline}hr,.rule{height: 0;margin: 15px 0;overflow: hidden;background: transparent;border: 0;border-bottom: 1px solid #ddd}hr:before,.rule:before{display: table;content: ""}hr:after,.rule:after{display: table;clear: both;content: ""}h1,h2,h3,h4,h5,h6{margin-top: 15px;margin-bottom: 15px;line-height: 1.1}h1{font-size: 30px}h2{font-size: 21px}h3{font-size: 16px}h4{font-size: 14px}h5{font-size: 12px}h6{font-size: 11px}small{font-size: 90%}blockquote{margin: 0}.lead{margin-bottom: 30px;font-size: 20px;font-weight: 300;color: #555}.text-muted{color: #999}.text-danger{color: #bd2c00}.text-emphasized{font-weight: bold;color: #333}ul,ol{padding: 0;margin-top: 0;margin-bottom: 0}ol ol,ul ol{list-style-type: lower-roman}ul ul ol,ul ol ol,ol ul ol,ol ol ol{list-style-type: lower-alpha}dd{margin-left: 0}tt,code{font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size: 12px}pre{margin-top: 0;margin-bottom: 0;font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace}#realtime .status{overflow: visible;position: absolute;top: -5px;left: 0;background: url("/public/images/github-status.png");width: 26px;height: 26px;display: block;margin: 0 5px 0 0}#realtime .up{background-position: 0 0}#realtime .problem{background-position: 0 -53px}#realtime .down{background-position: 0 -26px}.container{max-width: 920px;margin: 0 auto 20px auto}#header{background: #FAFAFA;background: -moz-linear-gradient(#FAFAFA, #EAEAEA);background: -webkit-linear-gradient(#FAFAFA, #EAEAEA);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#eaeaea')";border-bottom: 1px solid #CACACA;box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4),0 0 10px rgba(0, 0, 0, 0.1)}#markup{padding: 3px}#markup article{padding-top: 30px}.markdown-body{overflow: hidden;font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;font-size: 16px;line-height: 1.6;word-wrap: break-word}.markdown-body>*:first-child{margin-top: 0 !important}.markdown-body>*:last-child{margin-bottom: 0 !important}.markdown-body .absent{color: #c00}.markdown-body .anchor{position: absolute;top: 0;left: 0;display: block;padding-right: 6px;padding-left: 30px;margin-left: -30px}.markdown-body .anchor:focus{outline: none}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{position: relative;margin-top: 1em;margin-bottom: 16px;font-weight: bold;line-height: 1.4}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{display: none;color: #000;vertical-align: middle}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{padding-left: 8px;margin-left: -30px;text-decoration: none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{display: inline-block}.markdown-body h1 tt,.markdown-body h1 code,.markdown-body h2 tt,.markdown-body h2 code,.markdown-body h3 tt,.markdown-body h3 code,.markdown-body h4 tt,.markdown-body h4 code,.markdown-body h5 tt,.markdown-body h5 code,.markdown-body h6 tt,.markdown-body h6 code{font-size: inherit}.markdown-body h1{padding-bottom: 0.3em;font-size: 2.25em;line-height: 1.2;border-bottom: 1px solid #eee}.markdown-body h1 .anchor{line-height: 1}.markdown-body h2{padding-bottom: 0.3em;font-size: 1.75em;line-height: 1.225;border-bottom: 1px solid #eee}.markdown-body h2 .anchor{line-height: 1}.markdown-body h3{font-size: 1.5em;line-height: 1.43}.markdown-body h3 .anchor{line-height: 1.2}.markdown-body h4{font-size: 1.25em}.markdown-body h4 .anchor{line-height: 1.2}.markdown-body h5{font-size: 1em}.markdown-body h5 .anchor{line-height: 1.1}.markdown-body h6{font-size: 1em;color: #777}.markdown-body h6 .anchor{line-height: 1.1}.markdown-body p,.markdown-body blockquote,.markdown-body ul,.markdown-body ol,.markdown-body dl,.markdown-body table,.markdown-body pre{margin-top: 0;margin-bottom: 16px}.markdown-body hr{height: 4px;padding: 0;margin: 16px 0;background-color: #e7e7e7;border: 0 none}.markdown-body ul,.markdown-body ol{padding-left: 2em}.markdown-body ul.no-list,.markdown-body ol.no-list{padding: 0;list-style-type: none}.markdown-body ul ul,.markdown-body ul ol,.markdown-body ol ol,.markdown-body ol ul{margin-top: 0;margin-bottom: 0}.markdown-body li>p{margin-top: 16px}.markdown-body dl{padding: 0}.markdown-body dl dt{padding: 0;margin-top: 16px;font-size: 1em;font-style: italic;font-weight: bold}.markdown-body dl dd{padding: 0 16px;margin-bottom: 16px}.markdown-body blockquote{padding: 0 15px;color: #777;border-left: 4px solid #ddd}.markdown-body blockquote>:first-child{margin-top: 0}.markdown-body blockquote>:last-child{margin-bottom: 0}.markdown-body table{display: block;width: 100%;overflow: auto;word-break: normal;word-break: keep-all}.markdown-body table th{font-weight: bold}.markdown-body table th,.markdown-body table td{padding: 6px 13px;border: 1px solid #ddd}.markdown-body table tr{background-color: #fff;border-top: 1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color: #f8f8f8}.markdown-body img{max-width: 100%;box-sizing: border-box}.markdown-body span.frame{display: block;overflow: hidden}.markdown-body span.frame>span{display: block;float: left;width: auto;padding: 7px;margin: 13px 0 0;overflow: hidden;border: 1px solid #ddd}.markdown-body span.frame span img{display: block;float: left}.markdown-body span.frame span span{display: block;padding: 5px 0 0;clear: both;color: #333}.markdown-body span.align-center{display: block;overflow: hidden;clear: both}.markdown-body span.align-center>span{display: block;margin: 13px auto 0;overflow: hidden;text-align: center}.markdown-body span.align-center span img{margin: 0 auto;text-align: center}.markdown-body span.align-right{display: block;overflow: hidden;clear: both}.markdown-body span.align-right>span{display: block;margin: 13px 0 0;overflow: hidden;text-align: right}.markdown-body span.align-right span img{margin: 0;text-align: right}.markdown-body span.float-left{display: block;float: left;margin-right: 13px;overflow: hidden}.markdown-body span.float-left span{margin: 13px 0 0}.markdown-body span.float-right{display: block;float: right;margin-left: 13px;overflow: hidden}.markdown-body span.float-right>span{display: block;margin: 13px auto 0;overflow: hidden;text-align: right}.markdown-body code,.markdown-body tt{padding: 0;padding-top: 0.2em;padding-bottom: 0.2em;margin: 0;font-size: 85%;background-color: rgba(0,0,0,0.04);border-radius: 3px}.markdown-body code:before,.markdown-body code:after,.markdown-body tt:before,.markdown-body tt:after{letter-spacing: -0.2em;content: "\00a0"}.markdown-body code br,.markdown-body tt br{display: none}.markdown-body del code{text-decoration: inherit}.markdown-body pre>code{padding: 0;margin: 0;font-size: 100%;word-break: normal;white-space: pre;background: transparent;border: 0}.markdown-body .highlight{margin-bottom: 16px}.markdown-body .highlight pre,.markdown-body pre{padding: 16px;overflow: auto;font-size: 85%;line-height: 1.45;background-color: #f7f7f7;border-radius: 3px}.markdown-body .highlight pre{margin-bottom: 0;word-break: normal}.markdown-body pre{word-wrap: normal}.markdown-body pre code,.markdown-body pre tt{display: inline;max-width: initial;padding: 0;margin: 0;overflow: initial;line-height: inherit;word-wrap: normal;background-color: transparent;border: 0}.markdown-body pre code:before,.markdown-body pre code:after,.markdown-body pre tt:before,.markdown-body pre tt:after{content: normal}.markdown-body kbd{display: inline-block;padding: 3px 5px;font-size: 11px;line-height: 10px;color: #555;vertical-align: middle;background-color: #fcfcfc;border: solid 1px #ccc;border-bottom-color: #bbb;border-radius: 3px;box-shadow: inset 0 -1px 0 #bbb}.codehilite{background: #ffffff}.codehilite .c{color: #999988;font-style: italic}.codehilite .err{color: #a61717;background-color: #e3d2d2}.codehilite .k{color: #000000;font-weight: bold}.codehilite .o{color: #000000;font-weight: bold}.codehilite .cm{color: #999988;font-style: italic}.codehilite .cp{color: #999999;font-weight: bold}.codehilite .c1{color: #999988;font-style: italic}.codehilite .cs{color: #999999;font-weight: bold;font-style: italic}.codehilite .gd{color: #000000;background-color: #ffdddd}.codehilite .gd .x{color: #000000;background-color: #ffaaaa}.codehilite .ge{color: #000000;font-style: italic}.codehilite .gr{color: #aa0000}.codehilite .gh{color: #999999}.codehilite .gi{color: #000000;background-color: #ddffdd}.codehilite .gi .x{color: #000000;background-color: #aaffaa}.codehilite .go{color: #888888}.codehilite .gp{color: #555555}.codehilite .gs{font-weight: bold}.codehilite .gu{color: #aaaaaa}.codehilite .gt{color: #aa0000}.codehilite .kc{color: #000000;font-weight: bold}.codehilite .kd{color: #000000;font-weight: bold}.codehilite .kp{color: #000000;font-weight: bold}.codehilite .kr{color: #000000;font-weight: bold}.codehilite .kt{color: #445588;font-weight: bold}.codehilite .m{color: #009999}.codehilite .s{color: #d14}.codehilite .na{color: #008080}.codehilite .nb{color: #0086B3}.codehilite .nc{color: #445588;font-weight: bold}.codehilite .no{color: #008080}.codehilite .ni{color: #800080}.codehilite .ne{color: #990000;font-weight: bold}.codehilite .nf{color: #990000;font-weight: bold}.codehilite .nn{color: #555555}.codehilite .nt{color: #000080}.codehilite .nv{color: #008080}.codehilite .ow{color: #000000;font-weight: bold}.codehilite .w{color: #bbbbbb}.codehilite .mf{color: #009999}.codehilite .mh{color: #009999}.codehilite .mi{color: #009999}.codehilite .mo{color: #009999}.codehilite .sb{color: #d14}.codehilite .sc{color: #d14}.codehilite .sd{color: #d14}.codehilite .s2{color: #d14}.codehilite .se{color: #d14}.codehilite .sh{color: #d14}.codehilite .si{color: #d14}.codehilite .sx{color: #d14}.codehilite .sr{color: #009926}.codehilite .s1{color: #d14}.codehilite .ss{color: #990073}.codehilite .bp{color: #999999}.codehilite .vc{color: #008080}.codehilite .vg{color: #008080}.codehilite .vi{color: #008080}.codehilite .il{color: #009999}
+    </style>
+    <style type="text/css">
+      .markdown-body hr{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC")}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="markup">
+        <article id="content" class="markdown-body">
+          <h2>概述</h2>
+<p>Server-sent Events 简称 <strong>SSE</strong>。服务器端通过 HTTP 或者专用的特定协议推送数据到 Web 页面。</p>
+<h3>创建</h3>
+<p>用 <code>EventSource</code> 的创建对象，并注册一个事件侦听器。</p>
+<div class="codehilite"><pre>var source = new EventSource(&#39;updates.cgi&#39;);
+source.onmessage = function (event) {
+  alert(event.data);
+};
+</pre></div>
+
+
+<h3>事件流格式</h3>
+<p>服务器端发送的响应内容使用值为"text/event-stream"的MIME类型。</p>
+<p>事件流仅仅是一个简单的文本,使用 <code>UTF-8</code> 格式的编码。每条消息后面都由一个空行作为分隔符，以冒号开头的行为注释行会被忽略。</p>
+<blockquote>
+<p>事件流总是解码为 <code>UTF - 8</code>,没有办法来指定另一个字符编码。</p>
+</blockquote>
+<div class="codehilite"><pre>data: This is the first message.
+
+data: This is the second message, it
+data: has two lines.
+</pre></div>
+
+
+<p>这种使用默认事件类型 <code>message</code> 。也可以指定事件类型，将不同的事件区分。</p>
+<div class="codehilite"><pre>event: add  //事件类型
+data: 73857293
+
+event: remove
+data: 2153
+
+event: add
+data: 113411
+</pre></div>
+
+
+<p>在客户端这样监听自定义的事件</p>
+<div class="codehilite"><pre>var source = new EventSource(&#39;updates.cgi&#39;);
+source.addEventListener(&#39;add&#39;, addHandler, false);
+source.addEventListener(&#39;remove&#39;, removeHandler, false);
+</pre></div>
+
+
+<p>事件流的请求可以使用 <code>HTTP 301</code> 和 307 重定向与正常的 HTTP 请求一样。如果连接被关闭，客户端将重新连接;客户端可以被告知使用 <code>HTTP 204</code> 无内容响应代码停止重新连接。</p>
+<p>可以在客户端调用 <code>source.close();</code> 关闭链接。</p>
+<p>使用 <code>SSE</code> ，比使用 <code>XMLHttpRequest</code> 或者 <code>iframe</code> 等用户代理方式可以更好地利用网络资源，实现客户端和服务器端协调。除此之外，还可以在移动端节省电量。</p>
+<h2>API 重要点</h2>
+<ul>
+<li><strong>new EventSource(url)</strong> 创建<code>EventSource</code>,并开始监听这个 url</li>
+<li>
+<p><strong>readyState</strong> <code>EventSource</code>和 <code>XHR</code> 一样拥有此属性，标识连接状态。<strong>0</strong> 为正在连接、<strong>1</strong>连接打开、<strong>2</strong>为关闭连接。</p>
+</li>
+<li>
+<p><strong>onopen, onmessage</strong> <code>EventSource</code>对象监听的两个重要的事件，除服务器端自定义事件类型外，默认情况下，当有新消息被接受时都将触发<code>onmessage</code>。</p>
+</li>
+<li>
+<p><strong>event.data</strong> <code>Event</code>对象的属性，用于字符串消息传递。如果需要传递对象需要利用 <code>JSON</code> 编解码。</p>
+</li>
+<li>
+<p><strong>close</strong> 用户从客户端关闭连接。</p>
+</li>
+<li>
+<p><strong>id</strong> 事件ID,会成为当前 <code>EventSource</code> 对象的内部属性"最后一个事件ID"的属性值.</p>
+</li>
+<li>
+<p><strong>retry</strong>
+一个整数值,表示浏览器在连接断开之后进行再次连接之前的等待时间(单位为毫秒,默认大约为3秒),如果该字段值不是整数,则会被忽略。</p>
+</li>
+</ul>
+<div class="codehilite"><pre>retry: 10000\n  //(将重新连接事件修改为10秒)
+data: hello world\n\n
+</pre></div>
+
+
+<h2>安全性</h2>
+<p>根据 WHATWG 的说明，在使用 SSE 接收消息时，需要检查消息的 e.origin 是否跟限定的相符合。</p>
+<div class="codehilite"><pre>source.addEventListener(&#39;message&#39;, function(e) {
+  if (e.origin != &#39;http://example.com&#39;) {
+    alert(&#39;Origin was not http://example.com&#39;);
+    return;
+  }
+  // ...
+}, false);
+</pre></div>
+
+
+<p>这样避免被恶意利用。</p>
+<h2>示例</h2>
+<p>该示例试用 <code>nodejs</code> 作为服务端，客户端开启 <code>EventSource</code> 后，服务端推送登录成功，每隔5秒发送一次时间。</p>
+<h3>服务器端代码</h3>
+<div class="codehilite"><pre>var http = require(&#39;http&#39;);
+var sys = require(&#39;sys&#39;);
+var fs = require(&#39;fs&#39;);
+
+http.createServer(function(req, res) {
+  //debugHeaders(req);
+
+  if (req.headers.accept &amp;&amp; req.headers.accept == &#39;text/event-stream&#39;) {
+    if (req.url == &#39;/events&#39;) {
+      sendSSE(req, res);
+    } else {
+      res.writeHead(404);
+      res.end();
+    }
+  } else {
+    res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/html&#39;});
+    res.write(fs.readFileSync(__dirname + &#39;/sse-node.html&#39;));
+    res.end();
+  }
+}).listen(8000);
+
+function sendSSE(req, res) {
+  res.writeHead(200, {
+    &#39;Content-Type&#39;: &#39;text/event-stream&#39;,
+    &#39;Cache-Control&#39;: &#39;no-cache&#39;,
+    &#39;Connection&#39;: &#39;keep-alive&#39;
+  });
+
+  var id = (new Date()).toLocaleTimeString();
+
+  // Sends a SSE every 5 seconds on a single connection.
+  setInterval(function() {
+    constructSSE(res, id, (new Date()).toLocaleTimeString());
+  }, 5000);
+  constructEventSSE(res,2014,&quot;userlogon&quot;,&quot;{\&quot;username\&quot;: \&quot;John123\&quot;}\n\n&quot;);
+  constructSSE(res, id, (new Date()).toLocaleTimeString());
+}
+
+function constructSSE(res, id, data) {
+  res.write(&#39;id: &#39; + id + &#39;\n&#39;);
+  res.write(&quot;data: &quot; + data + &#39;\n\n&#39;);
+}
+
+//自定事件类型
+function constructEventSSE(res,id,ev,data) {
+  res.write(&quot;event:&quot;+ev+&quot;\n&quot;);
+  res.write(&quot;id:&quot;+id+&quot;\n&quot;);
+  res.write(&quot;data:&quot;+data+&quot;\n\n&quot;);
+}
+
+function debugHeaders(req) {
+  sys.puts(&#39;URL: &#39; + req.url);
+  for (var key in req.headers) {
+    sys.puts(key + &#39;: &#39; + req.headers[key]);
+  }
+  sys.puts(&#39;\n\n&#39;);
+}
+</pre></div>
+
+
+<h3>客户端</h3>
+<div class="codehilite"><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;SSE demo&lt;/title&gt;
+     &lt;script&gt;
+    function getData() {
+        if (!!window.EventSource) {
+            var source = new EventSource(&#39;/events&#39;);
+            source.addEventListener(&#39;open&#39;, function(e) {
+                console.log(&quot;建立连接成功！&quot;);
+            }, false);
+
+            source.addEventListener(&#39;error&#39;, function(e) {
+              if (e.readyState == EventSource.CLOSED) {
+                console.log(&quot;关闭！&quot;);
+
+              }
+              //e.readySate==undefined 将服务关闭，否则会一致请求
+              if(!e.readyState){
+                   source.close();
+              }
+           }, false);
+
+           //登录成功
+           source.addEventListener(&#39;userlogon&#39;, function(e) {
+              var data = JSON.parse(e.data);
+              console.log(&#39;User login:&#39; + data.username);
+            }, false);
+
+            //一般性的事件，服务器端不需要写事件名
+           source.addEventListener(&quot;message&quot;,function(e){
+                document.getElementById(&quot;message&quot;).innerHTML += &#39;&lt;p&gt;&#39; + e.data + &#39;&lt;/p&gt;&#39;;
+           },false);
+           // source.onmessage = function(e) {
+
+            // };
+
+        } else {
+            alert(&quot;浏览器不支持SSE&quot;);
+        }
+
+    }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;SSE 示例&lt;/h1&gt;
+    &lt;div&gt;
+        &lt;p&gt;获取服务器端数据&lt;/p&gt;
+        &lt;input type=&quot;button&quot; value=&quot;获取数据&quot; onclick=&quot;getData();&quot; /&gt;
+        &lt;div id=&quot;message&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre></div>
+
+
+<blockquote>
+<p>注：代码来源于 HTML5Rocks</p>
+</blockquote>
+<h2>参考资料</h2>
+<p><a href="http://www.ibm.com/developerworks/cn/web/1307_chengfu_serversentevent/">http://www.ibm.com/developerworks/cn/web/1307_chengfu_serversentevent/</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Server-sent_events/Using_server-sent_events">https://developer.mozilla.org/zh-CN/docs/Server-sent_events/Using_server-sent_events</a></p>
+<p><a href="http://www.html5rocks.com/en/tutorials/eventsource/basics/?redirect_from_locale=zh">http://www.html5rocks.com/en/tutorials/eventsource/basics/?redirect_from_locale=zh</a></p>
+<p><a href="http://www.w3.org/TR/eventsource/#the-eventsource-interface">W3C</a></p>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

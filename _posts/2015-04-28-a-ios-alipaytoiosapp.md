@@ -50,7 +50,7 @@ app调用支付宝分两种情况：
 
 demo中例子是这样的
 
-```
+``` 
   if ([url.host isEqualToString:@"safepay"]) {
       
          [[AlipaySDK defaultService] processAuth_V2Result:url
