@@ -2,7 +2,7 @@
 layout: post
 title: 探索 javascript 模板
 category: javascript
-description: 随着 web 发展，前端应用变得越来越复杂,ajax 的广泛应用，交互的多层次性，以及不同场景的数据绑定和呈现，用传统的方式难以解决，于是 MVC 思想流行，出现数据和界面分离，模板的应用成为重要的一环。
+description: 随着 web 发展，前端应用变得越来越复杂,ajax 的广泛应用，交互的多层次性，以及不同场景的数据绑定和呈现，用传统的方式难以解决，于是应用 MVC 的思想，数据和界面分离，模板成为应用重要的一环。
 keywords: javascript,Template
 --- 
 
