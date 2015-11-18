@@ -2,7 +2,7 @@
 layout: post
 title: 探索 javascript 模板
 category: javascript
-description: 随着 web 发展，前端应用变得越来越复杂,ajax的广泛应用，交互的多层次性，以及不同场景的数据绑定和呈现，用传统的方式难以解决，于是 MVC思想流行，出现数据和界面分离，模板的应用成为重要的一环。
+description: 随着 web 发展，前端应用变得越来越复杂,ajax 的广泛应用，交互的多层次性，以及不同场景的数据绑定和呈现，用传统的方式难以解决，于是 MVC 思想流行，出现数据和界面分离，模板的应用成为重要的一环。
 keywords: javascript,Template
 --- 
 
@@ -21,7 +21,7 @@ for(var i=0;i<data.length;i++){
 pvInnerHtml+="</ul>";
 $(“#ul_list”).html(“”).html(pvInnerHtml);
 ```
-久而久之，由于每次都得重写拼凑一遍，效率低下，于是将这种代码仿照 `C#` 中的 `Format()` 方法 为 `String` 扩展了一个 `format`方法
+久而久之，由于每次都得重写拼凑一遍，效率低下，将写代码干成了体力活，于是将这种代码仿照 `C#` 中的 `Format()` 方法 为 `String` 扩展了一个 `format`方法
 >因为我是一名 `C#` 开发者
 
 ```
@@ -51,7 +51,7 @@ var data = [1,2];
 
 ##探索
 
-为了应对数据和复杂 `html` 片段之间的数据绑定想到模板。就如同 `ASP.NET` 以及等 Web 框架而言，都有比较发达的模板机制。模板使绑定数据和呈现上体现出很好的可读性，例如 ASP.NET  的 `Razor` 模板。
+为了应对数据和复杂 `html` 片段之间的数据绑定想到模板。就如同 `ASP.NET` 等其他 Web 框架而言，都有比较发达的模板机制。模板在绑定数据和呈现上体现出很好的可读性，例如 ASP.NET  的 `Razor` 模板。
 
 ```
 <ul>
@@ -60,9 +60,10 @@ var data = [1,2];
     }
 </ul>
 ```
-`ASP.NET` 利用 `.NET` 的动态编译，将模板编译成动态的类，并利用反射动态执行类中的代码。这个过程是很复杂。
 
-在 `javascript` 中，这样修改模板。
+`ASP.NET` 利用 `.NET` 的动态编译，将模板编译成动态的类，并利用反射动态执行类中的代码。当然这是一个复杂的过程。
+
+在 `javascript` 中，将模板修为这样：
 
 ```
 <ul>
@@ -72,7 +73,8 @@ var data = [1,2];
 </ul>
 
 ```
-这种写法其实回到了 `ASP.NET WebForm` 模式，这种写法相比 `Razor` 模板在解析上相对容易一点。
+
+这种写法有 `ASP.NET WebForm` 模板的影子(*其实就是*)，这种写法在解析上相比 `Razor` 模板容易一点。
 
 **思路**：是通过正则表达替换通配符的部分解析赋值。
 
@@ -99,6 +101,7 @@ while(match = re.exec(template)) {
 ["<%age%>", "age", index: 35, input: "<p>Hello, my name is <%name%>. I'm <%age%> years old.</p>"]
 
 ```
+
 因而模板引擎这样写：
 
 ```
@@ -111,6 +114,7 @@ var TemplateEngine = function(tpl, data) {
 }
 
 ```
+
 应用：
 
 ```
@@ -123,6 +127,7 @@ TemplateEngine(template,{name:"alex",age:23})
 ```
 
 这种做法针对 `<p></p>` 简单的数据绑定可以实现。但作为模板需要应对的情况还有：
+
 + 复杂的对象(数据源)
 + 分支判断(`if-else`、`switch`等判断)
 + 循环(`for`循环)
@@ -149,11 +154,15 @@ var TemplateEngine = function(html, options) {
 }
 
 ```
+
 这个精简的模板引擎是通过 **正则表达式**、动态执行 `javascript` 字符串，渲染而完成字符串替换，完成数据绑定和呈现。
 
 **问题**：
+
 1. 性能：模板引擎渲染的时候依赖 `Function` 构造器实现，`Function` 与 `eval`、`setTimeout`、`setInterval` 一样，提供了使用文本访问 `javascript` 解析引擎的方法，但这样执行 `javascript` 的性能非常低下。
 2. 调试：由于是动态执行字符串，若遇到错误调试器无法捕获错误源，导致模板 `BUG` 调试变得异常痛苦。在没有进行容错的引擎中，局部模板若因为数据异常甚至可以导致整个应用崩溃，随着模板的数目增加，维护成本将剧增。
+
+>这是出在 糖饼 大神的解读
 
 ##模板
 
@@ -161,9 +170,10 @@ var TemplateEngine = function(html, options) {
 
 `artTemplate`出自于 [糖饼](https://github.com/aui),鼎鼎大名的 `artDialog`也出于他。
 
-根据 腾讯 [CDC](http://cdc.tencent.com/) 测试，artTemplate 在 chrome 下渲染效率测试中分别是知名引擎 Mustache 与 micro tmpl 的 25 、 32 倍。
+根据 腾讯 [CDC](http://cdc.tencent.com/) 测试，**artTemplate** 在 **chrome** 下渲染效率测试中分别是知名引擎 **Mustache** 与 **micro tmpl** 的 25 、32 倍。
 
-特点：
+特点：  
+
 + 预编译 
 > artTemplate 的编译赋值过程是在渲染之前完成的，这种方式称之为“预编译”
 + 更快的字符串相加方式
@@ -172,6 +182,7 @@ var TemplateEngine = function(html, options) {
 使用比较简单，和主流的其他没有多少区别。github 地址 [https://github.com/aui/artTemplate](https://github.com/aui/artTemplate)
 
 ##参考资料
-[20行完成一个 javascript 模板](http://krasimirtsonev.com/blog/article/Javascript-template-engine-in-just-20-line)
+
+[20行完成一个 javascript 模板引擎](http://krasimirtsonev.com/blog/article/Javascript-template-engine-in-just-20-line)
 
 [String.prototype.replace](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
