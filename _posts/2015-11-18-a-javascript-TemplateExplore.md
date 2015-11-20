@@ -181,8 +181,108 @@ var TemplateEngine = function(html, options) {
 
 使用比较简单，和主流的其他没有多少区别。github 地址 [https://github.com/aui/artTemplate](https://github.com/aui/artTemplate)
 
-##参考资料
+## ES6 模板字符串
 
-[20行完成一个 javascript 模板引擎](http://krasimirtsonev.com/blog/article/Javascript-template-engine-in-just-20-line)
+**ES6** 引入了一种新型的字符串字面量语法 **模板字符串（template strings）**
+
+用 \`\`之间的字符串作为模板字符串，用`${expression}` 作为占位符。
+
+```
+var name="alex",age=25;
+console.log(`I'm ${name},${age} years old!`);
+```
+
+输出结果：
+
+```
+I'm alex,25 years old!
+
+```
+
+无须做任何就能胜任一个简单的模板引擎功能，不得不感叹新技术的强大。
+
+接着将这段代码修改：
+
+```
+var person={name:"alex",age:25};
+
+console.log(`I'm ${person.name},${person.age} years old!`);
+
+```
+
+输出：
+
+```
+I'm alex,25 years old!
+```
+
+继续改进，修改为复杂对象
+
+```
+var human={name:"alex",features:{age:25}};
+console.log(`I'm ${human.name},${human.features.age} years old!`);
+```
+
+完美的输出：
+
+```
+I'm alex,25 years old!
+```
+
+如此情况下，利用 **模板字符串** 打造一个基础模板引擎只需要支持分支条件判断和循环就行了。
+
+继续改进
+
+```
+var humans=[{name:"alex",features:{age:25,sex:1}},{name:"alice",features:{age:25,sex:2}}];
+
+for(p in humans){
+
+    var gender=humans[p].features.sex==1?"男":"女";
+    console.log(`这是 ${humans[p].name} ${gender},${humans[p].features.age} 岁`);
+}
+
+```
+
+将这个形式在转化为：
+
+```
+var str="for(p in humans){var gender=humans[p].features.sex==1?\"男\":\"女\";console.log(`这是 ${humans[p].name} ${gender},${humans[p].features.age} 岁`);}";
+
+eval(str);
+```
+
+获得了正常的结果
+
+最简单的模板引擎出现了：
+
+```
+var TemplateEngine=function(tl,data){eval(tl);}
+//调用
+TemplateEngine(str,humans);
+```
+
+在目前的情况下，这个基本可以完成模板引擎的所有功能。`data` 似乎没有用，其实这个 `data` 有大用，`data` 和 `tl` 配合可以做数据校验，语法检查等。
+
+也许这是最简单的**模板引擎**了，当然这个引擎是有问题，问题还很多。
+
+###问题
+
++ **ES6** 兼容性
+
+Chrome | Firefox (Gecko) |Internet Explorer|Safari
+---|---|---|---|
+41+ | 34+|12/Edge|不支持
+
++ 这个模板引擎确实是太简单了，没有错误校验，`eval`的执行效率也值得研究等
+
+总之：ES6的模板字符串，将来一定 javascript **模板引擎** 的方向，但不是现在。可以利用模板字符做些其他事情，的确很酷。
+
+
+
+##参考资料
+[20行完成一个 javascript 模板](http://krasimirtsonev.com/blog/article/Javascript-template-engine-in-just-20-line)
 
 [String.prototype.replace](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+
+[模板字符串](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings)
