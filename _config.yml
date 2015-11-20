@@ -1,0 +1,14 @@
+baseurl: /blog
+url: http://haifengwang.github.io/blog
+pygments: true
+markdown: redcarpet
+redcarpet:
+  extensions:
+    - fenced_code_blocks
+    - no_intra_emphasis
+    - strikethrough
+    - autolink
+    - tables
+safe: true
+paginate: 10
+
