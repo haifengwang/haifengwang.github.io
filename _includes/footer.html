@@ -8,10 +8,12 @@
         </div>
 
 <script>
+<script src="{{ site:url }}/prettify/prettify.js"></script>
 $(function() {
   $('pre').addClass('prettyprint').attr('style', 'overflow:auto');
+  $(window).onload=prettyPrint;
 });
 </script>
-<script src="{{ site:url }}/prettify/run_prettify.js?lang=css&skin=sunburst"></script>
+
 </body>
 </html>
