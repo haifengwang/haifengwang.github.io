@@ -70,7 +70,7 @@ Query OK, 0 rows affected, 1 warning (0.00 sec)
 
 现在开始执行一段 `sql` 语句:
 
-```sql
+```
 
 mysql> select 1;
 
@@ -90,7 +90,7 @@ mysql> select 1;
 
 用刚才设置新密码重新登录，创建一个数据库。
 
-```sql
+```
 
 mysql> create database wwdb;
 
@@ -109,7 +109,7 @@ go 一下大多说权限等问题，我并没有继续针对问题探索，直�
 
 使用以下脚本
 
-```shell
+```
 
 sudo rm /usr/local/mysql
 sudo rm -rf /usr/local/mysql*
@@ -125,7 +125,7 @@ sudo rm -rf /var/db/receipts/com.mysql.*
 
 执行后查看，清理结束后重新安装。按照以上的配置走了一遍，再创建数据库。
 
-```sql
+```
 mysql> create database firstDb;
 
 ```
