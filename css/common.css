@@ -117,7 +117,8 @@ table tr { border-top: 1px solid #cccccc;background-color: white;margin: 0;paddi
       font-weight: bold;
       border: 1px solid #cccccc;
       margin: 0;
-      padding: 6px 13px; }
+      padding: 6px 13px; 
+      background-color: #eaeaea;}
     table tr td {
       border: 1px solid #cccccc;
       margin: 0;

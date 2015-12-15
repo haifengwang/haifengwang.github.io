@@ -194,4 +194,4 @@ alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 
 >**注意**：用 MySQLWorkbench 建表时，对字符串类型，需要自定编码，不然会无法插入中文（*错误警告*）。
 
-至此 MySQL 安装玩了，准备愉快的玩耍了😊。
+至此 MySQL 安装完了，准备愉快的玩耍了😊。
