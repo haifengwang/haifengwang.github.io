@@ -10,6 +10,7 @@
 .postbox{width:100%;padding:10px 20px;}
 body{background-color:#ededed;padding:0px;margin:0px;font-family:"Monaco","Hiragino Sans GB","Microsoft YaHei",Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;word-spacing:1px;}
 em {font-style:italic;font-size: 12px;font-style:italic;color:#444;font-family: "FangSong","STFangsong";}
+strong{font-family:"SimHei","STHeiti";}
 img{border:0px;}
 .left{float:left;}
 .right{float:right;}
