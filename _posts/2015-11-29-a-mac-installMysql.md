@@ -192,6 +192,6 @@ alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 
 有没有更好的呢？答『有』， MySQL 官方有一个客户端工具 [**MySQLWorkbench**](http://dev.mysql.com/downloads/workbench/)。使用体验和 `SQL Server` 客户端差不多，功能也很强大，就用它了。
 
->**注意**：用 `MySQLWorkbench` 建表时，对字符串类型，需要自定编码，不然会出现无法出现中文。
+>**注意**：用 MySQLWorkbench 建表时，对字符串类型，需要自定编码，不然会无法插入中文（*错误警告*）。
 
 至此 MySQL 安装玩了，准备愉快的玩耍了😊。
