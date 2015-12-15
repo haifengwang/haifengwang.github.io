@@ -97,7 +97,14 @@ hr {
   height: 4px;
   padding: 0;
 }
-blockquote {border-left: 4px solid #dddddd;padding: 0 15px; color: #777777;  }
+/*blockquote {border-left: 4px solid #dddddd;padding: 0 15px; color: #777777;  }*/
+blockquote {
+    background: #F4F5F7 url(../images/blockquote.gif) 3px 3px no-repeat;
+    border: 1px dashed #CCC;
+    padding: 8px 12px 8px 36px;
+    margin: 5px 0;
+    /*font-family: 'Open Sans','Helvetica Neue',Arial,"Hiragino Sans GB",sans-serif;*/
+}
 blockquote > :first-child {margin-top: 0; }
 blockquote > :last-child {margin-bottom: 0; }
 
