@@ -107,7 +107,7 @@ HttpResponseMessage response =
 
 问题：它们两个有什么异同？
 
-  ** HttpClient** 更接近 Http ,基于 **Henrik F Nielson** 标准设计，基于它设计 API 很容易的遵循 HTPP 标准。利用了异步编程模型设计；非常实用于 WebService 和 RESTFull API。
+  **HttpClient** 更接近 Http ,基于 **Henrik F Nielson** 标准设计，基于它设计 API 很容易的遵循 HTPP 标准。利用了异步编程模型设计；非常实用于 WebService 和 RESTFull API。
   
   **WebClient** 是 `.NET 2.0` 提供的，支持同步、支持下载进度、支持FTP。
   
