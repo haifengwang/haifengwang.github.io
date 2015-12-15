@@ -103,7 +103,7 @@ blockquote {
     border: 1px dashed #CCC;
     padding: 8px 12px 8px 36px;
     margin: 5px 0;
-    /*font-family: 'Open Sans','Helvetica Neue',Arial,"Hiragino Sans GB",sans-serif;*/
+    font-family: "楷体","楷体_GB2312"; 
 }
 blockquote > :first-child {margin-top: 0; }
 blockquote > :last-child {margin-bottom: 0; }
