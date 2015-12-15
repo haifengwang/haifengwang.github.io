@@ -9,7 +9,7 @@
 .content{width:100%;margin-right:10px;display:inline;padding:10px;}
 .postbox{width:100%;padding:10px 20px;}
 body{background-color:#ededed;padding:0px;margin:0px;font-family:"Monaco","Hiragino Sans GB","Microsoft YaHei",Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;word-spacing:1px;}
-em {font-style:italic;font-size: 12px;font-style:italic;color:#444;background-color:#E0DFD8;}
+em {font-style:italic;font-size: 12px;font-style:italic;color:#444;font-family: "FangSong","STFangsong";}
 img{border:0px;}
 .left{float:left;}
 .right{float:right;}
@@ -103,7 +103,7 @@ blockquote {
     border: 1px dashed #CCC;
     padding: 8px 12px 8px 36px;
     margin: 5px 0;
-    font-family: "楷体","楷体_GB2312"; 
+    font-family: "FangSong","STFangsong"; 
 }
 blockquote > :first-child {margin-top: 0; }
 blockquote > :last-child {margin-bottom: 0; }
