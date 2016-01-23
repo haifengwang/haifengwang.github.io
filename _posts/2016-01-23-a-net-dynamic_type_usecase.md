@@ -2,11 +2,11 @@
 layout: post
 title: Microsoft.NET Dynamic 类型不完全讲解
 category: net
-description: Microsoft .NET FrameWork4.0 新增了 dynamic 关键字。这看似简单的一步，让C# 有了动态语言的特性。在处理外部接口，和其他语言交互时增加了极大的便利。笔者在最近频繁的对接口的中的 JSON 数据处理中，用 dynamic,尝到了不少甜头，在此做一个总结。
+description: Microsoft .NET FrameWork4.0 新增了 dynamic 关键字。看似简单的一步，让C# 有了动态语言的特性。在处理外部接口，和其他语言交互时增加了极大的便利。笔者在最近频繁的处理 API接口的 JSON 数据时，用 dynamic 尝到了不少甜头，在此做一个总结。
 keywords: Microsoft.NET,Dynamic,动态
 ---
 
-Microsoft .NET FrameWork4.0 新增了 `dynamic` 关键字。看似简单的一步，让`C#` 有了动态语言的特性。在处理外部接口，和其他语言交互时增加了极大的便利。笔者在最近频繁的对接口的中的 JSON 数据处理中，用 `dynamic`,尝到了不少甜头，在此做一个总结。
+Microsoft .NET FrameWork4.0 新增了 `dynamic` 关键字。看似简单的一步，让`C#` 有了动态语言的特性。在处理外部接口，和其他语言交互时增加了极大的便利。笔者在最近频繁的处理 API 接口的 JSON 数据时，用 `dynamic`,尝到了不少甜头，在此做一个总结。
 
 
 ## 简单的类型
@@ -15,7 +15,7 @@ Microsoft .NET FrameWork4.0 新增了 `dynamic` 关键字。看似简单的一�
 dynamic da;
 da = 1;
 Console.WriteLine("值:{0},类型：{1}", da, da.GetType()); //[1]步奏
-da = "2";
+da = "2"; //[2]步奏2
 Console.WriteLine("值:{0},类型：{1}", da, da.GetType());
 
 ```
@@ -24,10 +24,11 @@ Console.WriteLine("值:{0},类型：{1}", da, da.GetType());
 
 ```
 值:1,类型：System.Int32
+
 值:2,类型：System.String
 
 ```
-去掉 [1] 步奏，会输出 `值:2,类型：System.String` ,`da`值和类型在随后的修改而都发生了。
+去掉 [1] 步奏，会输出 `值:2,类型：System.String` ,`da`值和类型在 [2] 修改后都发生变化。
 
 ## 复杂类型
 
