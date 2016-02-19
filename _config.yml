@@ -1,6 +1,6 @@
 baseurl: /blog
 url: http://haifengwang.github.io/blog
-pygments: true
+highlighter: true
 markdown: redcarpet
 redcarpet:
   extensions:
