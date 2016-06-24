@@ -11,7 +11,7 @@ keywords: AJAX,ASP.NET,Session
 在一个页面中需要获取几家保险公司的报价数据，请求内容除了保险公司的标识外基本相似。有10家保险公司，就需要10个请求，这个10个请求在 `Controller` 对应一个 `Action`。我期待的结果，任何一个请求返回数据，就可以立即进入该结果`详情页面`（*详情内容在这次请求中已经获取*）。事实上，我点击以后，需要等待好久才可以进入详情页面。
 
 页面是这样的：
-![页面]({{ site:url }}/blog/images/2016/quote.png)
+![页面]({{ site:url }}/images/2016/quote.png)
 
 Ajax 代码大体是这样的:
 
@@ -33,18 +33,22 @@ console.log("结束："+new Date().getTime());
 ```
 结束标志很快出现，确定还是`详情页面`响应慢导致，但没有想到慢的原因。跟踪网络，结果发现比较夸张的一幕。
 
-![TTFB]({{ site:url }}/blog/images/2016/ttfb.png)
+![TTFB]({{ site:url }}/images/2016/ttfb.png)
 
 太夸张了，不过有一部分是本地网络原因。
 
-** TTFB **
+**TTFB**
 > **TTFB** (Time To First Byte)，是最初的网络请求被发起到从服务器接收到第一个字节这段时间，它包含了 TCP 连接时间，发送HTTP 请求时间和获得响应消息第一个字节的时间。
 
 >优化方式通常是：
->+ 减少DNS查询
->+ 减少DNS查询
->+ 提早Flush
->+ 添加周期头
+
+>减少DNS查询
+
+>减少DNS查询
+
+>提早Flush
+
+>添加周期头
 
 这种优化方式对这个页面而言不需要。但可以确定还是服务端响应比较慢造成。google TTFB 时间过长原因，看到这篇文章[Diagnosing Slow Web Servers with Time to First Byte](http://www.websiteoptimization.com/speed/tweak/time-to-first-byte/).其中列举了造成慢的一些因素。我比较关注这两个 **Too many processes / connections** 、**External resource delays** 。然后 google ASP.NET 阻塞。看到了这篇文章[ASP.NET Concurrent Ajax Requests and Session State Blocking](http://johnculviner.com/asp-net-concurrent-ajax-requests-and-session-state-blocking/)。作者遇到和我类似问题，他的解决方案，我拿来即用。
 
