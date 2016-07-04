@@ -1,6 +1,6 @@
 baseurl: /blog
 url: http://haifengwang.github.io/blog
-highlighter: true
+highlighter: rouge
 markdown: redcarpet
 redcarpet:
   extensions:
@@ -11,4 +11,3 @@ redcarpet:
     - tables
 safe: true
 paginate: 10
-
