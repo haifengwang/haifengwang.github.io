@@ -2,11 +2,11 @@
 layout: post
 title: 在ASP.NET中利用JSAPI实现微信支付
 category: net
-description: 用 JSAPI 实现微信支付，本应按照官方文档一步步就可以搞定，做了才知道微信给大家增加好多难度。如果你探索不到位，实现起来并不是一件容易的事情。笔者在做这一块时就踩过好多坑，一一填满后，流出了两行心酸的泪😢。
+description: 用 JSAPI 实现微信支付，理应按照官方文档一步步可以搞定，做了才知道微信给大家增加好多难度。如果你探索不到位，实现起来并不是一件容易的事情。笔者在做这一块时就踩过好多坑，一一填满后，流出了两行心酸的😢。
 keywords: Pay,ASP.NET,微信
 ---
 
-> 微信支付的坑比月球表面还要多。————某开发者说
+> 微信支付的坑比月球表面还要多。——某开发者说
 
 ## 前期工作
 
@@ -45,7 +45,7 @@ keywords: Pay,ASP.NET,微信
 
 3. 拉取用户信息（`openid` 就在用户信息中）
 
-[*注*]如果需要要刷新网页授权 `access_token`，避免过期。
+[*注*]如果需要要刷新网页授权 `access_token` 避免过期(*由于access_token拥有较短的有效期，当access_token超时后，可以使用refresh_token进行刷新，refresh_token有效期为30天，当refresh_token失效之后，需要用户重新授权*)。
 
 这些返回参数都是`JSON`(*这部分和支付应该不是一个团队的产物*)。
 
@@ -55,15 +55,21 @@ keywords: Pay,ASP.NET,微信
 
 1. 引用微信 JS (http://res.wx.qq.com/open/js/jweixin-1.0.0.js)
 
-2. 设置 config 参数(包括appId、timeStamp、nonceStr、signature,除appId外都需要后端生成)
+2. 设置 config 参数(包括appId、timeStamp、nonceStr、signature,除 appId 外都需要后端处理生成)
 
 3. 设置 chooseWXPay 参数(需要使用的JS接口列表，支付用 `chooseWXPay`)
 
 4. 支付(根据[统一下单文档](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=4_3)组装 xml 数据，`post`到`https://api.mch.weixin.qq.com/pay/unifiedorder`,获得`prepay_id`,prepay_id 用于数字签名，然后通过`JSAPI`就可以支付)
 
-传说中的坑来了。js中的 `nonceStr` `package`  `paySign` 需要后端生成，具体代理如下：
+传说中的坑来了。js中的 `nonceStr` `package`  `paySign` 需要后端生成，具体如下：
 
-1. 加密中串键值前后端有区别，命名规则发生变化，区分大小写。
+1. 加密串中键值前后端有区别，命名规则发生变化，区分大小写(生成`signature`签名串中 `appId`、`timeStamp`必须这样写)
+
+示例：
+```
+string v_tmpStr = "appId=" + appid + "&nonceStr=" + 随机串 + "&package=prepay_id=" + v + "&signType=MD5&timeStamp=" + timeStamp + "&key=secretKey";
+    paySign = FormsAuthentication.HashPasswordForStoringInConfigFile(v_tmpStr, "MD5").ToUpper();
+```
 
 2. 必须遵守一些规则(把所有的参数首字母从小到大传参的形式组成字符串后，把key值再拼接上),具体在规则在[安全规范](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=4_3)和[统一下单]的文档中。
 
@@ -222,7 +228,7 @@ keywords: Pay,ASP.NET,微信
 ```
 基本按照官方文档做，好多博客上也是这样写的。但是事实告诉我，这种做法是不对的。
 
-然后按照之前同事写过的方式，将以上修改为：
+然后修改为这样：
 
 ```
                 if (resHandler.IsTenpaySign() && orderWeiXinNotify.result_code == "SUCCESS")
@@ -233,8 +239,10 @@ keywords: Pay,ASP.NET,微信
 ```
 回调成功了！
 
-这样整个流程基本算走通了。没有完成的喜悦，只是长舒一口气，这个过程太『曲折』，尽然在一步步的猜测中做出来。
+整个流程基本算走通了。没有完成的喜悦，只是长舒一口气，这个过程太『曲折』，尽然在一步步的猜测中做出来。
 
 ## 总结
 
-微信官方文档混乱，版本不一致(公众号开发文档和JSSDK文档)，规则不统一(有些数据是`XML`格式，有些是`JSON`),参数描述过于简单。对接入的开发者造成了很大的困扰，似乎大多数开发者都是猜测对接。论坛上关于微信支付的帖子很多，评论中骂声一片。不知道腾讯作为一个巨头型的公司，江湖传说国内互联网巨头中产品做的最好的，何时能对开发者友好一点。（*当年接入支付宝，支付宝每一个接口都对应一个DEMO示例压缩包，压缩包中有文档，有 demo，当时觉得作为一个大公司没有统一的 SDK*）经过微信这一遭，似乎明白了，没有糟的，只有更糟的。
+微信官方文档混乱，版本不一致(*公众号开发文档和JSSDK文档*)，规则不统一(*有些数据是`XML`格式，有些是`JSON`*),参数描述过于简单。对接入的开发者造成了很大的困扰，似乎大多数开发者都是猜测对接。论坛上关于微信支付的帖子很多，评论中骂声一片。不知道腾讯作为一个巨头型的公司，江湖传说国内互联网巨头中产品做的最好的，何时能对开发者友好一点。（*当年接入支付宝，支付宝每一个接口都对应一个DEMO示例压缩包，压缩包中有文档，有 demo，当时觉得作为一个大公司没有统一的 SDK*）经过微信这一遭，似乎明白了，没有糟的，只有更糟的。
+
+但愿我的尝试，能帮到其他人！
