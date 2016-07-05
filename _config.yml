@@ -1,7 +1,7 @@
 baseurl: /blog
 url: http://haifengwang.github.io/blog
 highlighter: rouge
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
   extensions:
     - fenced_code_blocks
