@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS3 Multiple Columns & Column Breaks
-category: HTML5
+category: html5
 description: 用 CSS3 可以像报纸一样对文本多列排版,通过 Multiple Columns 和 Column Breaks 保证了完美显示
 keywords:  CSS3,column-count,column-break-inside
 --- 
