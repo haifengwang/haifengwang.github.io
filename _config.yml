@@ -1,5 +1,5 @@
-baseurl: /blog
-url: http://haifengwang.github.io/blog
+baseurl: /
+url: http://haifengwang.github.io/
 highlighter: rouge
 markdown: kramdown
 redcarpet:
