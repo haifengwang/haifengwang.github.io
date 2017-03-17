@@ -22,7 +22,7 @@ keywords: 开发,ios,UIWebView,webView
 
 + UIWebPaginationModeRightToLeft 
 
-##分页显示
+## 分页显示
 
 通过以下代码将网页按照左右翻页的方式呈现（例如 *网易新闻 iPad 版* ）：
 
@@ -53,7 +53,7 @@ keywords: 开发,ios,UIWebView,webView
 如果未设置`pagingEnabled=YES`,滑动时屏幕上显示的页面并不是一个完整的分割好的页面，这个属性的设置非常**重要**。
 
 
-##显示页码
+## 显示页码
 
 要获取页面总分页数，需要实现`UIWebViewDelegate`在 `webViewDidFinishLoad:(UIWebView *)webView` 通过属性`pageCount`(*该属性页是7.0后增加*)
 

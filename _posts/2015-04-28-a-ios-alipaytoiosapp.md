@@ -6,7 +6,7 @@ description: 项目中用到了支付宝，集成时出现了不少问题。其�
 keywords: ios,支付宝,集成
 --- 
 
-##错误1：openssl rsa.h file not found
+## 错误1：openssl rsa.h file not found
 
 集成支付宝，首先在支付宝账户下下载最新的SDK,将文件拷贝到app目录下，然后出现 `openssl rsa.h file not found`
 
@@ -17,7 +17,7 @@ keywords: ios,支付宝,集成
 [参考地址](http://blog.csdn.net/pearlhuzhu/article/details/9300435)
 
 
-##错误2：“系统繁忙，请稍后再试”无法支付
+## 错误2：“系统繁忙，请稍后再试”无法支付
 
 按照以上方法集成后，开始测试支付，结果出现这样的错误
 >
@@ -40,7 +40,7 @@ MAC OS自openSSL
 
 然后一步步的生成密钥
 
-##错误3：在安装支付宝的客户端的终端上获取不到付款状态
+## 错误3：在安装支付宝的客户端的终端上获取不到付款状态
 
 app调用支付宝分两种情况：
 

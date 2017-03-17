@@ -15,18 +15,18 @@ keywords:  HTML5,WebSocket,推送
 
 `WebSocket` 简单易用，可以很方便的使用。
 
-###创建 `WebSocket` 对象
+### 创建 `WebSocket` 对象
 
 ```
 var Socket = new WebSocket(url, [protocal] );
 ```
 
-###`WebSocket` 包含以下属性
+### `WebSocket` 包含以下属性
 
 + `Socket.readyState` 只读属性，包含（0~3）四中状态。
 + `Socket.bufferedAmount` 只读属性，用来标识通过 `send()` 已经发送过的字节数。
 
-###WebSocket Events
+### WebSocket Events
 
 + `open` 当 socket 建立连接时触发
 + `message` 接受到服务端消息时触发
@@ -40,7 +40,7 @@ var Socket = new WebSocket(url, [protocal] );
 ## 示例
 通过一个简单 Demo 实现客户端浏览器通过 `WebSocket` 连接服务端后，服务的推送2条消息给客户端。
 
-###客户端 HTML 和 Javascript (index.html)
+### 客户端 HTML 和 Javascript (index.html)
 
 ```
 <!DOCTYPE html>
@@ -142,7 +142,7 @@ webSocketDemo  node app.js
 朋友，既然来就多看看！
 ```
 
-##参考资料
+## 参考资料
 [https://developer.mozilla.org/zh-CN/docs/WebSockets/Writing_WebSocket_client_applications](https://developer.mozilla.org/zh-CN/docs/WebSockets/Writing_WebSocket_client_applications)
 
 [http://www.tutorialspoint.com/html5/html5_websocket.htm](http://www.tutorialspoint.com/html5/html5_websocket.htm)

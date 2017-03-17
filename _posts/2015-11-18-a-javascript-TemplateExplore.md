@@ -8,7 +8,7 @@ keywords: javascript,Template
 
 最近一直和某系统打交道，其中前端数据的处理，大多是 `ajax` 加 `javascript` 模板实现。这种方式于绑定数据给予了极大的灵活性。
 
-##曾经
+## 曾经
 
 曾经在前端页面处理 javascript 的数据绑定直接拼字符串，是这样实现的：
 
@@ -49,7 +49,7 @@ var data = [1,2];
 
 这种代码相对之前是方便了许多，但应对复杂的 `html`,数据和 view 之间还是有很高的耦合性，导致修改很不方便。
 
-##探索
+## 探索
 
 为了应对数据和复杂 `html` 片段之间的数据绑定想到模板。就如同 `ASP.NET` 等其他 Web 框架而言，都有比较发达的模板机制。模板在绑定数据和呈现上体现出很好的可读性，例如 ASP.NET  的 `Razor` 模板。
 
@@ -164,7 +164,7 @@ var TemplateEngine = function(html, options) {
 
 >这是出在 糖饼 大神的解读
 
-##模板
+## 模板
 
 面对这些问题，我如何解决呢？我找到了 **artTemplate** 。
 
@@ -266,7 +266,7 @@ TemplateEngine(str,humans);
 
 也许这是最简单的**模板引擎**了，当然这个引擎是有问题，问题还很多。
 
-###问题
+### 问题
 
 + **ES6** 兼容性
 
@@ -280,7 +280,7 @@ Chrome | Firefox (Gecko) |Internet Explorer|Safari
 
 
 
-##参考资料
+## 参考资料
 [20行完成一个 javascript 模板](http://krasimirtsonev.com/blog/article/Javascript-template-engine-in-just-20-line)
 
 [String.prototype.replace](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace)

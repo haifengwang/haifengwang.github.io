@@ -192,6 +192,6 @@ public static List<Article> GetArtices()
         return articles;
     }
 ```
-##总结
+## 总结
 
 `Deferred Execution`在多核时代，成为了各个高级语言一个很重要特性。应用场景还是蛮多的。比如说创建一个对象，需要包含子对象，但子对象的并不需要及时初始化；比如说一个大对象中有多个子对象，比如说要优化程序的启动速度等。最常见的示例恐怕是各种 `ORM` 框架了。记着以后自己写访问类，记得一定要支持 `Deferred Execution`。
