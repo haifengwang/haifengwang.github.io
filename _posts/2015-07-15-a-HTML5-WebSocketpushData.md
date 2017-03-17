@@ -101,7 +101,7 @@ var Socket = new WebSocket(url, [protocal] );
 npm install websocket
 ```
 
-###第二步创建websocket逻辑文件 （app.js）
+### 第二步创建websocket逻辑文件 （app.js）
 
 ```
 var server = require('websocket').server, http = require('http');
@@ -130,7 +130,7 @@ socket.on('request', function (request) {
 
 ```
 
-###第三步启动 websocket 服务
+### 第三步启动 websocket 服务
 ```
 webSocketDemo  node app.js
 ```
