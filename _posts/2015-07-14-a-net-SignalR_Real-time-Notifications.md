@@ -8,18 +8,18 @@ keywords: ASP.NET,SignalR,realtime
 --- 
 
 
-##简述
+## 简述
 
 **ASP.NET SignalR** 是一个为 ASP.NET 开发者提供简化  `real-time web` 应用的库。简化并优化以往 `Web` 程序耗资源 `javascript轮询`，以及 `Comet Programming` 方案，同时为 Web程序 添加了即时能力（realtime）。
 
 `ASP.NET SignalR` 出现后就受到广泛的关注。目前已经到升级到2.0,需要 `.NET Framework 4.5`支持。
 
 
-##目标
+## 目标
 
 利用 **ASP.NET SignalR** 实现一个服务器端执行一个耗时任务，执行完通知客户端。
 
-##实现
+## 实现
 
 ### 第一步：安装 ASP.NET SignalR
 通过 `Nuget` 安装 `ASP.NET SignalR`
@@ -198,7 +198,7 @@ Clients.Client(Context.ConnectionId).sendMessage(msg);
 
 通过以上四步实现了，一个服务端耗时任务执行完后对客户端即时通知。
 
-##参考资料
+## 参考资料
 
 [http://www.asp.net/signalr/overview/getting-started](http://www.asp.net/signalr/overview/getting-started)
 

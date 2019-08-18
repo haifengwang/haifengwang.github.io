@@ -6,10 +6,10 @@ description: HTML5 推出 Server-Sent Events 允许客户端从服务器端获�
 keywords:  HTML5,SSE,推送
 --- 
 
-##概述
+## 概述
 Server-sent Events 简称 **SSE**。服务器端通过 HTTP 或者专用的特定协议推送数据到 Web 页面。
 
-###创建
+### 创建
 用 `EventSource` 的创建对象，并注册一个事件侦听器。
 
 ```
@@ -19,7 +19,7 @@ source.onmessage = function (event) {
 };
 ```
 
-###事件流格式
+### 事件流格式
 服务器端发送的响应内容使用值为"text/event-stream"的MIME类型。
 
 事件流仅仅是一个简单的文本,使用 `UTF-8` 格式的编码。每条消息后面都由一个空行作为分隔符，以冒号开头的行为注释行会被忽略。
@@ -63,7 +63,7 @@ source.addEventListener('remove', removeHandler, false);
 
 
 
-##API 重要点
+## API 重要点
 
 + **new EventSource(url)** 创建`EventSource`,并开始监听这个 url
 + **readyState** `EventSource`和 `XHR` 一样拥有此属性，标识连接状态。**0** 为正在连接、**1**连接打开、**2**为关闭连接。
@@ -83,7 +83,7 @@ retry: 10000\n  //(将重新连接事件修改为10秒)
 data: hello world\n\n
 ```
 
-##安全性
+## 安全性
 
 根据 WHATWG 的说明，在使用 SSE 接收消息时，需要检查消息的 e.origin 是否跟限定的相符合。
 
@@ -98,11 +98,11 @@ source.addEventListener('message', function(e) {
 ```
 这样避免被恶意利用。
 
-##示例
+## 示例
 
 该示例试用 `nodejs` 作为服务端，客户端开启 `EventSource` 后，服务端推送登录成功，每隔5秒发送一次时间。
 
-###服务器端代码
+### 服务器端代码
 
 ```
 
@@ -165,7 +165,7 @@ function debugHeaders(req) {
 }
 ```
 
-###客户端
+### 客户端
 
 ```
 <!DOCTYPE html>
@@ -230,7 +230,7 @@ function debugHeaders(req) {
 ```
 >注：代码来源于 HTML5Rocks
 
-##参考资料
+## 参考资料
 [http://www.ibm.com/developerworks/cn/web/1307_chengfu_serversentevent/](http://www.ibm.com/developerworks/cn/web/1307_chengfu_serversentevent/)
 
 [https://developer.mozilla.org/zh-CN/docs/Server-sent_events/Using_server-sent_events](https://developer.mozilla.org/zh-CN/docs/Server-sent_events/Using_server-sent_events)

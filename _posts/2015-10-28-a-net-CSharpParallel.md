@@ -6,11 +6,11 @@ description: 在 .NET 4.0 引入了 TPL ，对多线程做了更便捷的扩展�
 keywords: Parallel,Parallel.For,多线程,线程池,TPL 
 --- 
 
-##背景
+## 背景
 
 在如今的大数据时代，多核 cpu 的发展，如何利用多核，提升计算能力，成为程序开发中一个很重要的话题。随之衍生了专为多核而生的语言，比如说 `Golang` 和 `Erlang` 。曾浮光掠影的看过 `Golang` 的多核编程，关于它的取得 cpu 核数，背后的概念而感叹。而 `Csharp` 作为一个一直走在时代前沿的语言，在 `.NET 4.0` 后引入了 `System.Threading.Tasks` 提供了对多核的支持。
 
-##场景
+## 场景
 
 曾经在工作中经常通过读取数据，生成静态的 txt 文件。在大批量生成的时，曾为效率问题而头疼过。
 
@@ -61,7 +61,7 @@ public static void ThreadPoolCreateTxt()
 
 这种做法效率明显提升了，也达到了当时的需求。
 
-##Parallel Class
+## Parallel Class
 
 .NET4.0 在 **mscorlib** 增加了 `System.Threading.Tasks`,旨在在简化多线操作的不方便性，同时利用多核的优势，进行并行计算。
 
@@ -84,7 +84,7 @@ public static void ParallelCreateTxt()
 ```
 代码很简洁，效率还可以。
 
-##效率
+## 效率
 
 用 `Parallel.ForEach` 后效率比普通的高，但是并不优于 `ThreadPool`.于是沿着这个疑问，开始搜寻,得到以下信息。
 

@@ -43,7 +43,7 @@ func monkeyEatPeach(day int) {
 
 推导如下： 
 
-![推导](http://haifengwang.github.io/blog/images/2014/houzi.png) 
+![推导](/images/2014/houzi.png) 
 
 得出这个结果需要一定的数学知识，但是一旦得出这个公式，则将这类问题轻易的解决。 
 

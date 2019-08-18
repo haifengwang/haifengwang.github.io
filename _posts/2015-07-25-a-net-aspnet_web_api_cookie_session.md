@@ -7,14 +7,14 @@ keywords: ASP.NET,Web API,Cookie,Session
 --- 
 
 
-##背景
+## 背景
 最近接到一个需求:需要在 `ASP.NET Web API` 中对一个外部 `API` 做一次调用。而外部 `API` 又是以 `Cookie` 作为验证。问题来了,在 ASP.NET Web API 中当然是不能记录 `Cookie` ，但 `Cookie` 还得记下该怎么办？
 
 解决办法:通过第三方存储:如文件、缓存、数据库等。我选择较为方便的 `Session`.
 
-##实现
+## 实现
 
-###第一步:登录
+### 第一步:登录
 
 通过 `HttpClient` 登录,获取 `Cookie` 并保存到 `Session` 中
 
@@ -175,7 +175,7 @@ routes.MapHttpRoute(
    
 ```
 
-##参考资料
+## 参考资料
 
 [ASP.NET Web API](http://www.asp.net/web-api)
 
